@@ -1,11 +1,11 @@
 $( document ).ready(function() {
-	//Define Vara
-	var canvas =$("#canvas")[0];
+	//Define Vars
+	var canvas = $("#canvas")[0];
 	var ctx=canvas.getContext("2d");
-	var w =canvas.width();
-	var h =canvas.height();
+	var w = $ ("#canvas").width();
+	var h = $ ("#canvas").height();
 	var cw=15;
-	var d;
+	var d = "right";
 	var food;
 	var score;
 	var speed=130;
@@ -15,8 +15,9 @@ $( document ).ready(function() {
 	
 	//Initializer
 	function init(){
+		d = "right"
 		create_snake();
-		creat_food();
+		create_food();
 		score=0;
 		
 		if (typeof game_loop != "undefined") clearInterval(game_loop);
@@ -44,8 +45,8 @@ $( document ).ready(function() {
 		//Paint The Canvas
 		ctx.fillStyle="black";
 		ctx.fillRect(0,0,w,h);
-		ctx.strokeStle="white";
-		ctx:strokeRect(0,0,w,h);
+		ctx.strokeStyle="white";
+		ctx.strokeRect(0,0,w,h);
 		
 		var nx=snake_array[0].x;
 		var ny=snake_array[0].y;
@@ -57,8 +58,11 @@ $( document ).ready(function() {
 		
 		//Collide code
 		if (nx==-1 || nx==w/cw || ny==-1 || ny ==h/cw || check_collision(nx,ny, snake_array)){
-			init();
-			
+			//init();
+			//Insert Final Score
+			$("#final_score").html(score);
+			//show overlay
+			$("#overlay").fadeIn(300);
 			return;
 		}
 		if (nx==food.x && ny == food.y){
@@ -80,11 +84,13 @@ $( document ).ready(function() {
 		paint_cell(food.x,food.y);
 		//Check Score
 		checkscore(score);
+		//Display Current score
+		$("#score").html("Score: "+score);
 	}
 	function paint_cell(x,y){
 		ctx.fillStyle="green";
 		ctx.fillRect(x*cw,y*cw,cw,cw);
-		ctx.strokeStyle="white";
+		ctx.strokeStyle="yellow";
 		ctx.strokeRect(x*cw,y*cw,cw,cw);
 	}
 	function check_collision(x,y, array){
@@ -94,4 +100,31 @@ $( document ).ready(function() {
 		}
 		return false;
 	}
+	function checkscore(){
+		if(localStorage.getItem("highscore")==null){
+			//high score
+			localStorage.setItem("highscore", score);
+		} else {
+			//not high score
+			if(score > localStorage.getItem("highscore")){
+				localStorage.setItem("highscore", score);
+			}	
+		}
+		$("#high_score").html("High: "+localStorage.highscore);
+	}
+	
+	//Keyboard Controller
+	
+	$(document).keydown(function(e){
+		var key = e.which;
+		if(key=="37" && d !="right") d = "left";
+		else if(key=="38" && d !="down") d = "up";
+		else if(key=="39" && d !="left") d = "right";
+		else if(key=="40" && d !="up") d = "down";
+	});
 });
+function resetscore(){
+	localStorage.highscore = 0;
+	hightscorediv=document.getElementById("high_score");
+	highscorediv.innerHTML="High: 0";
+}
