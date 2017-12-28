@@ -5,6 +5,10 @@ body{
  background-color:black;
 }
 /* Global */
+.container#overlay{
+	min-height:600px;
+	background:url('background.jpg') no-repeat 0 -150px;
+}
 .container{
  width:80%;
  margin:auto;
@@ -60,18 +64,17 @@ canvas{
 	background:#000000;
 	border:1px #cccccc solid;
 	margin-top:120px;
-	margin-left:20%;
+	margin-left:450px;
 }
 /* barra dos resultados*/
 #stats{
 	width:592px;
-	background:#5f5454;
 	padding:5px;
 	font-size:20px;
 	font-weight:bold;
 	color:#ffffff;
 	margin-bottom:5px;
-	margin-left:20%;
+	margin-left:450px;
 	overflow:auto;
 }
 #score,#high_score{
@@ -93,11 +96,9 @@ canvas{
 	color:#ffffff;
 	font-size:25px;
 	text-align:center;
-	margin-left:26%;
-	margin-top:180px;
+	margin-left:630px;
+	margin-top:300px;
 	position:absolute;
-	top:170px;
-	left:180px;
 }
 #overlay a{
 	display:block;
@@ -108,18 +109,20 @@ canvas{
 #overlay a:hover{
 	background:#5f5454;
 }
-/*-----------------------------------------------------------------------*/
-footer{
-	margin-top:20px;
+#showcase{
+	min-height:840px;
+	background:url('../img/showcase.jpg') no-repeat ;
+	color:#ffffff;
 }
+/*-----------------------------------------------------------------------*/
+
 footer p{
 	text-align: center;
 	color:white;
-	margin-top:90px;
-	padding:40px;
+	padding:4px;
 }
 footer img{
 	float:right;
 	width:110px;
-	padding:0 125px 0 100px;	
+	padding:0 125px 0 0;	
 }
