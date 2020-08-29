@@ -1,186 +1,48 @@
 <!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <meta name="description" content="first site build ittca">
-  <meta name="keywords" content="ittca, intelligible thoughts">
-  <meta name="author" content="Tiago Anastácio">
-  <title>    Intelligible Thoughts</title>
-  <link rel="icon" type="image" href="./img/ittca_logo.png">
-  <link rel="stylesheet" href="./css/style.css">  
- </head>
-<style>
-*{
-	margin:0;
-	padding:0;
-}
-body{
-	background-color:#f9f9f9;
-}
-#check{
-	display:none;
-}
-#icone{
-	cursor:pointer;
-	padding:15px;
-	position: absolute;
-	z-index:1;
-}
-.barra{
-	background-color:#8094dd;
-	height:100%;
-	width:300px;
-	position: absolute;
-	transition: all .2s linear;
-	left:-300px;
-}
-nav{
-	width:100%;
-	position: absolute;
-	top:60px;
-}
-nav a{
-	text-decoration:none;
-}
-.link{
-	background-color:#6da3f9;
-	padding: 20px;
-	font-family: "Arial";
-	font-size: 12pt;
-	color: #f4f4f9;
-	border-bottom: 2px solid #222;
-}
-.barra ul ul{
-	display: none;
-}
-.barra ul li:hover > ul{
-	display: block;
-	transform: translateX(100px);
-}
-.link:hover{
-	background-color: #2c69cc;
-}
-#check:checked ~ .barra{
-	transform: translateX(300px);
-}
-#check:checked ~ .barra nav a .link{
-	opacity:1;
-	margin-top: 0;
-}
-
-</style>
- 
- <body>
- <input type="checkbox" id="check">
- <label id="icone" for="check"><img src="./img/icone.png"></label>
- <div class="barra">
- <nav>
- 	<ul>
-	<li class="current"><a href="index.html"><div class="link">Home</div></a></li>
-	<li><a href="./games/snake.html"><div class="link">Snake</div></a></li>
-	<li><a href="player.html"><div class="link">tv/radio</div></a></li>
-	<li><a href="about.html"><div class="link">About</div></a></li>
-	<li><a href="about.html"><div class="link">Cad/Cam</div></a>
-		<ul>
-		<li><a href="services.html"><div class="link">Fagor</div></a></li>
-		<li><a href="services.html"><div class="link">Fanuc</div></a></li>
-		<li><a href="services.html"><div class="link">Heidenhain</div></a></li>
-		<li><a href="services.html"><div class="link">Mastercam</div></a></li>
-		<li><a href="services.html"><div class="link">Powermill</div></a></li>
-		<li><a href="services.html"><div class="link">Inventor</div></a></li>
-		<li><a href="services.html"><div class="link">Solidworks</div></a></li>
-		</ul>
-	</li>
-	</ul>
-	<ul>
-	<li><a href="services.html"><div class="link">Engenharia Infomática</div></a>
-		<ul>
-		<li><a href="services.html"><div class="link">2º semestre</div></a>
-			<ul>
-			<li><a href="services.html"><div class="link">Elementos de Probabilidades e Estatística</div></a></li>
-			<li><a href="services.html"><div class="link">Laboratório de Programação</div></a></li>
-			<li><a href="services.html"><div class="link">Matemática Finita</div></a></li>
-			<li><a href="services.html"><div class="link">Modelação de Sistemas de Informação</div></a></li>
-			<li><a href="services.html"><div class="link">Sistemas Operativos</div></a></li>
-			</ul>
-		</li>
-		</ul>
-		<ul>
-		<li><a href="services.html"><div class="link">4º semestre</div></a>
-			<ul>
-			<li><a href="services.html"><div class="link">Estruturas de Dados e Algoritmos Fundamentais</div></a></li>
-			<li><a href="services.html"><div class="link">Introdução à Inteligência Artificial</div></a></li>
-			<li><a href="services.html"><div class="link">Investigação Operacional</div></a></li>
-			<li><a href="services.html"><div class="link">Laboratório de Desenvolvimento de Software</div></a></li>
-			<li><a href="services.html"><div class="link">Linguagens de Programação</div></a></li>
-			</ul>
-		</li>
-		</ul>
-		<ul>
-		<li><a href="services.html"><div class="link">Linguagens de programação</div></a>
-			<ul>
-			<li><a href="services.html"><div class="link">C</div></a></li>
-			<li><a href="services.html"><div class="link">C++</div></a></li>
-			<li><a href="services.html"><div class="link">Css5</div></a></li>
-			<li><a href="services.html"><div class="link">Html5</div></a></li>
-			<li><a href="services.html"><div class="link">Javascript</div></a></li>
-			<li><a href="services.html"><div class="link">Python3</div></a></li>
-			</ul>
-		</li>
-		</ul>
-	</li>
-	</ul>
- </nav>
- </div>
-  <header>
-   <div class="container">
-    <div id="branding">
-	 <img src="./img/ittca_logo.png"></img>
-	</div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>folder theme</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+   <div class="nav-bar">
+       <ul>
+           <li><a href="index.html" id="onlink">Home</a></li>
+           <li><a href="sql.html">sql</a></li>
+           
+       </ul>
    </div>
-  </header>
-  
-  <section id="showcase">
-   <div class="container">
-    <h1>university study time</h1>
-	<p>"inteligibilidade perceciona-se por uma elegibilidade informativa naturalmente rececionada pelo individuo, constituinte de complexidade, compreensão e evolução."</p>
+   <div class="main_container">
+      <h1 style="text-align: center;">ittca site em construção</h1>
+       <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero recusandae quidem mollitia, voluptate nulla ullam pariatur blanditiis neque praesentium unde quas omnis maxime. Dicta recusandae ut nostrum, voluptatibus ab, doloremque.</span>
+       <span>Optio iusto, quibusdam vel, commodi quidem quae perferendis ea itaque beatae, eius quasi deserunt quos ipsam natus delectus quam sunt facere eligendi ipsa! Doloribus, quos error vero similique quidem iusto?</span>
+       <span>Placeat eligendi, consectetur consequuntur, explicabo nemo vero voluptatem iure assumenda, cumque inventore ad dolorem similique maxime soluta nesciunt maiores natus recusandae. A, aliquam, maxime. Provident accusantium porro ab, perspiciatis dolores.</span>
+       <span>Consequatur, iste. Vitae odio consequuntur iste asperiores ducimus nihil nostrum perspiciatis soluta dolorem neque beatae, quis quam, magnam cumque commodi accusamus vero rem, vel mollitia, quo fuga aliquid. Esse, provident.</span></p>
+       <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero recusandae quidem mollitia, voluptate nulla ullam pariatur blanditiis neque praesentium unde quas omnis maxime. Dicta recusandae ut nostrum, voluptatibus ab, doloremque.</span>
+       <span>Optio iusto, quibusdam vel, commodi quidem quae perferendis ea itaque beatae, eius quasi deserunt quos ipsam natus delectus quam sunt facere eligendi ipsa! Doloribus, quos error vero similique quidem iusto?</span>
+       <span>Placeat eligendi, consectetur consequuntur, explicabo nemo vero voluptatem iure assumenda, cumque inventore ad dolorem similique maxime soluta nesciunt maiores natus recusandae. A, aliquam, maxime. Provident accusantium porro ab, perspiciatis dolores.</span>
+       <span>Consequatur, iste. Vitae odio consequuntur iste asperiores ducimus nihil nostrum perspiciatis soluta dolorem neque beatae, quis quam, magnam cumque commodi accusamus vero rem, vel mollitia, quo fuga aliquid. Esse, provident.</span></p>
+       <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero recusandae quidem mollitia, voluptate nulla ullam pariatur blanditiis neque praesentium unde quas omnis maxime. Dicta recusandae ut nostrum, voluptatibus ab, doloremque.</span>
+       <span>Optio iusto, quibusdam vel, commodi quidem quae perferendis ea itaque beatae, eius quasi deserunt quos ipsam natus delectus quam sunt facere eligendi ipsa! Doloribus, quos error vero similique quidem iusto?</span>
+       <span>Placeat eligendi, consectetur consequuntur, explicabo nemo vero voluptatem iure assumenda, cumque inventore ad dolorem similique maxime soluta nesciunt maiores natus recusandae. A, aliquam, maxime. Provident accusantium porro ab, perspiciatis dolores.</span>
+       <span>Consequatur, iste. Vitae odio consequuntur iste asperiores ducimus nihil nostrum perspiciatis soluta dolorem neque beatae, quis quam, magnam cumque commodi accusamus vero rem, vel mollitia, quo fuga aliquid. Esse, provident.</span></p>
+       <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero recusandae quidem mollitia, voluptate nulla ullam pariatur blanditiis neque praesentium unde quas omnis maxime. Dicta recusandae ut nostrum, voluptatibus ab, doloremque.</span>
+       <span>Optio iusto, quibusdam vel, commodi quidem quae perferendis ea itaque beatae, eius quasi deserunt quos ipsam natus delectus quam sunt facere eligendi ipsa! Doloribus, quos error vero similique quidem iusto?</span>
+       <span>Placeat eligendi, consectetur consequuntur, explicabo nemo vero voluptatem iure assumenda, cumque inventore ad dolorem similique maxime soluta nesciunt maiores natus recusandae. A, aliquam, maxime. Provident accusantium porro ab, perspiciatis dolores.</span>
+       <span>Consequatur, iste. Vitae odio consequuntur iste asperiores ducimus nihil nostrum perspiciatis soluta dolorem neque beatae, quis quam, magnam cumque commodi accusamus vero rem, vel mollitia, quo fuga aliquid. Esse, provident.</span></p>
+       <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero recusandae quidem mollitia, voluptate nulla ullam pariatur blanditiis neque praesentium unde quas omnis maxime. Dicta recusandae ut nostrum, voluptatibus ab, doloremque.</span>
+       <span>Optio iusto, quibusdam vel, commodi quidem quae perferendis ea itaque beatae, eius quasi deserunt quos ipsam natus delectus quam sunt facere eligendi ipsa! Doloribus, quos error vero similique quidem iusto?</span>
+       <span>Placeat eligendi, consectetur consequuntur, explicabo nemo vero voluptatem iure assumenda, cumque inventore ad dolorem similique maxime soluta nesciunt maiores natus recusandae. A, aliquam, maxime. Provident accusantium porro ab, perspiciatis dolores.</span>
+       <span>Consequatur, iste. Vitae odio consequuntur iste asperiores ducimus nihil nostrum perspiciatis soluta dolorem neque beatae, quis quam, magnam cumque commodi accusamus vero rem, vel mollitia, quo fuga aliquid. Esse, provident.</span></p>
+       <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero recusandae quidem mollitia, voluptate nulla ullam pariatur blanditiis neque praesentium unde quas omnis maxime. Dicta recusandae ut nostrum, voluptatibus ab, doloremque.</span>
+       <span>Optio iusto, quibusdam vel, commodi quidem quae perferendis ea itaque beatae, eius quasi deserunt quos ipsam natus delectus quam sunt facere eligendi ipsa! Doloribus, quos error vero similique quidem iusto?</span>
+       <span>Placeat eligendi, consectetur consequuntur, explicabo nemo vero voluptatem iure assumenda, cumque inventore ad dolorem similique maxime soluta nesciunt maiores natus recusandae. A, aliquam, maxime. Provident accusantium porro ab, perspiciatis dolores.</span>
+       <span>Consequatur, iste. Vitae odio consequuntur iste asperiores ducimus nihil nostrum perspiciatis soluta dolorem neque beatae, quis quam, magnam cumque commodi accusamus vero rem, vel mollitia, quo fuga aliquid. Esse, provident.</span></p>
    </div>
-  </section>
-  <section id="newsletter">
-   <div class="container">
-    <h1>Subscrive to our newsletter</h1>
-	<form>
-	 <input type="email" placeholder="Enter email">
-	 <button type="submit" class="button_1">Subscribe</button>
-	</form>
-   </div>	
-  </section>
-  
-  <section id="boxes">
-   <div class="container">
-    <div class="box">
-	 <img src="./img/logo_html.png"> 
-	 <h3>HTML5 Markup</h3>
-	 <p>Posso escrever o que quiser, isto aqui é um lugar para o texto e escreve-se com o p de parágrafo</p>
-	</div>
-    <div class="box">
-     <img src="./img/logo_css.png">	
-	 <h3>CSS Styling</h3>
-	 <p>Posso escrever o que quiser, isto aqui é um lugar para o texto e escreve-se com o p de parágrafo</p>
-	</div>
-    <div class="box">
-     <img src="./img/logo_brush.png">	
-	 <h3>Graphic Design</h3>
-	 <p>Posso escrever o que quiser, isto aqui é um lugar para o texto e escreve-se com o p de parágrafo</p>
-	</div>
-   </div>
-  </section>
-  <div class="container">
-   <div id="rodape">
-       <img src="./img/intel_logo.png">
-       <p>ittca  Copyright &copy; 2018</p>
-   </div>
-  </div>
- </body>
+   <footer>
+       <p style="text-align: center;">2020 &copy; tiago calado</p>
+   </footer>
+    
+</body>
 </html>

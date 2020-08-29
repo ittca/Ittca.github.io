@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sql</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="nav-bar">
+       <ul>
+           <li><a href="index.html">home</a></li>
+           <li><a href="sql.html" id="onlink">sql</a></li>
+           
+       </ul>
+   </div>
+   <div class="main_container">
+      <h1 style="text-align: center;">resenha sql</h1>
+      <h3>0 - Pormenores interessantes</h3>
+       <h4>Existem 3 maneiras de escrever comentários:</h4>
+      # Comentário de apenas uma linha 
+      <br>-- Comentário de apenas uma linha
+      <br>/* Comentário de várias linhas */ 
+      <h3>1- Criação, estruturação, introdução de dados e leitura de bd e suas tabelas</h3>
+        <p><texto class="azul">show databases;</texto> # mostra todas as bases de dados (bd)
+           <br><texto class="azul">create database </texto>nome_da_bd <texto class="azul">;</texto> # criar um bd
+           <br><texto class="azul">use </texto>nome_da_bd <texto class="azul">;</texto>   
+            <br><texto class="azul">show tables;</texto> # mostra as tabelas da bd
+            <br><br><texto class="azul">create table </texto> nome_da_tabela <texto class="azul">(</texto>
+            <br> titulo_da_coluna tipo_de_dados <texto class="azul">,</texto>
+            <br> titulo_da_coluna tipo_de_dados <texto class="azul">,</texto>
+            <br> titulo_da_coluna tipo_de_dados <br><texto class="azul">);</texto> # cria uma tabela com 3 colunas
+            <br><br>
+            Para ver os tipos usar este <a href="https://www.mysqltutorial.org/mysql-data-types.aspx/">link.</a>
+            <br><br><texto class="azul">select </texto> * <texto class="azul">from </texto> nome_da_tabela <texto class="azul">;</texto> # para ver todos os dados da tabela
+            
+            
+        </p>
+   </div>
+   <footer>
+       <p style="text-align: center;">2020 &copy; tiago calado</p>
+   </footer>
+</body>
+</html>
