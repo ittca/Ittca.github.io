@@ -6,12 +6,6 @@ body{
     background: lightblue;
     font-family: arial;
 }
-
-#index-tab{
-    border-radius: 6px 6px 0 0;
-    width:1%;
-    height: 18.4px;
-}
 .menu-tabs{
     border-bottom: 1px solid #000;
     width: 902px;
