@@ -11,35 +11,35 @@
 <body>
     <div class="menu-tabs">
         <ul>
-            <li><a href="index.html"></a></li>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="sql.html">sql</a></li>
+            <li><a href="index.html" id="index"></a></li>
+            <li><a href="home.html" id="home">Home</a></li>
+            <li><a href="sql.html" id="sql" style="height: 18.5px;background:#fff">sql</a></li>
         </ul>
     </div>
     <div class="body_container">
         <h1 style="text-align: center;">resenha sql</h1>
         <h3>0 - Pormenores interessantes</h3>
         <h4>Existem 3 maneiras de escrever comentários:</h4>
-        <cinza># Comentário de apenas uma linha</cinza>
-        <br><cinza>-- Comentário de apenas uma linha</cinza>
-        <br><cinza>/* Comentário de várias linhas */</cinza>
+        <cinza class="cinza"># Comentário de apenas uma linha</cinza>
+        <br><cinza class="cinza">-- Comentário de apenas uma linha</cinza>
+        <br><cinza class="cinza">/* Comentário de várias linhas */</cinza>
         <h3>1- Criação, estruturação, introdução de dados e leitura de bd e suas tabelas</h3>
         <p>
-            <azul class="azul">show databases;</azul><cinza style="white-space:pre">&#9;&#9;&#9;&#9;&#9;&#9;&#9;# mostra todas as bases de dados (bd)</cinza>
+            <azul class="azul">show databases;</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;&#9;&#9;&#9;&#9;&#9;# mostra todas as bases de dados (bd)</cinza>
             <br>
-            <azul class="azul">create database </azul>nome_da_bd <azul class="azul">;</azul><cinza style="white-space:pre">&#9;&#9;&#9;&#9;# criar um bd</cinza>
+            <azul class="azul">create database </azul>nome_da_bd <azul class="azul">;</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;&#9;&#9;# criar um bd</cinza>
             <br>
-            <azul class="azul">use </azul>nome_da_bd <azul>;</azul><cinza style="white-space:pre">&#9;&#9;&#9;&#9;&#9;&#9;&#9;# seleciona a tabela que se pretende usar</cinza>
+            <azul class="azul">use </azul>nome_da_bd <azul class="azul">;</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;&#9;&#9;&#9;&#9;&#9;# seleciona a tabela que se pretende usar</cinza>
             <br>
-            <azul>show tables;</azul><cinza style="white-space:pre">&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;# mostra as tabelas da bd</cinza>
-            <br><azul>select </azul> * <azul>from </azul> nome_da_tabela <azul>;</azul><cinza style="white-space:pre">&#9;&#9;&#9;&#9;# para ver todos os dados de certa tabela</cinza>
+            <azul class="azul">show tables;</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;# mostra as tabelas da bd</cinza>
+            <br><azul class="azul">select </azul> * <azul class="azul">from </azul> nome_da_tabela <azul class="azul">;</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;&#9;&#9;# para ver todos os dados de certa tabela</cinza>
             <br>
             <br><br>
-            <azul>create table </azul> nome_da_tabela <azul>(</azul><cinza style="white-space:pre">&#9;&#9;&#9;&#9;# cria uma tabela com 3 colunas</cinza>
-            <br><texto style="white-space:pre">titulo_da_coluna &#9; tipo_de_dados </texto><azul>,</azul>
+            <azul class="azul">create table </azul> nome_da_tabela <azul class="azul">(</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;&#9;&#9;# cria uma tabela com 3 colunas</cinza>
+            <br><texto style="white-space:pre">titulo_da_coluna &#9; tipo_de_dados </texto><azul class="azul">,</azul>
             <br><texto style="white-space:pre">titulo_da_coluna &#9; tipo_de_dados </texto>
             <br>
-            <azul>);</azul>
+            <azul class="azul">);</azul>
             <br><br>
             Para ver os tipos de dados usar este <a href="https://www.mysqltutorial.org/mysql-data-types.aspx/">link.</a>
             <br><br>
