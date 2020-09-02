@@ -5,7 +5,7 @@ html {
 body {
     margin: auto;
     background: lightblue;
-    font-family: arial;
+    font-family: 'arial','Times New Roman';
 }
 
 #index{
