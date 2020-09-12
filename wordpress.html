@@ -6,6 +6,7 @@
     <title>ittca - Home</title>
     <link rel="icon" href="./imagens/ittca_logo.png">
     <link rel="stylesheet" href="head.css">
+    <link rel="stylesheet" href="wordpress.css">
 </head>
 <div id="header"></div>
 
@@ -18,7 +19,19 @@
             <li><a href="wordpress.html" id="wordpress"style="height:18.5px;background:#fff">wordpress</a></li>
         </ul>
     </div>
-    
+    <div class="body_container">
+        <h3>Resenha wordpress</h3>
+        <h4>Estrutura e comandos essenciais</h4>
+        <p>Para um tema wordpress existem dois ficheiros essenciais: <br>
+        <azul class="azul"><br>index.php <br>style.css <br><br></azul>
+        O index pode conter apenas uma estrutura html e o style a decoração que pretendermos, no entanto vários são outros os ficheiros que vão permitir que a plataforma wordpress possa introduzir e mudar dados ao nosso tema, e o wordpress também têm as suas próprias funções para estas questões. As Linguagens permitidas são html, css, javascript e php. <br>
+        O Style.css deverá começar com os comentários: <br> /* <br>Theme Name: resenha wordpress <br>Author: Tiago Calado <br> Version: 1.0 <br>*/ <br> vair dar ao tema os dados mencionados, e o wordpress vai lê-los e disponibilizá-los no lugar apropriado. <br><br>
+        <azul class="azul">header.php <br>footer.php</azul><br><br>
+        Ao usar estes dois ficheiros vamos iniciar a estrutura html no header.php e terminá-la no footer.php, depois no index.php usa-se código php e chama-se no ínicio a get_header() e no fim get_footer(). <br>
+        </p>
+        <h5>header.php</h5>
+        <p></p>
+    </div>
 </body>
 <footer>
     <p style="text-align: center;"><span id="year"></span> &copy; tiago calado</p>
