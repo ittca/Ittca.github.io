@@ -69,7 +69,7 @@
             <azul class="azul">select </azul>titulo_da_coluna<azul class="azul"> from</azul> nome_da_tabela <br><azul class="azul">where</azul> qualquer_titulo_de_coluna = xpto<azul class="azul">;</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;# retorna titulo_de_coluna que tiver xpto em qualquer_titu...</cinza><br>
             <br><br>
             <h3 onclick='esconder_ex1();' style="cursor: pointer;">Exercícios 1</h3>
-            <div id="sql_exer_1">
+            <div id="ex1">
               <a> Faça copy and paste de todas as perguntas e cole-as no seu novo ficheiro sql. <br>Elas vão aparecer como comentário e ajudam a identificar os passos, lembre-se o raio executa todos os comandos e o raio com um simbolo do rato executa apenas o último comando até ao ponto e vírgula. <br>Pode também usar os atalhos do teclado, ctrl + enter para apenas o último comando <br> ou ctrl + shift + enter para todos os comandos presentes no ficheiro.</a><br><br><br>
               <a>#1- Mostre todas as bases de dados que possue.</a><br><br>
               <a>#2- Crie uma base de dados de nome "bd".</a><br><br>
@@ -181,15 +181,15 @@
         </div>
     </div>
     <script type="text/javascript">
-      var ex1 = 0;
-      var p1 = 0;
+      var ex1;
+      var p1;
       function esconder_ex1(){
         if (ex1==1){
-          document.getElementById("sql_exer_1").style.display="inline";
+          document.getElementById("ex1").style.display="inline";
           return ex1=0;
         }
         else {
-          document.getElementById("sql_exer_1").style.display="none";
+          document.getElementById("ex1").style.display="none";
           return ex1=1;
         }
       }
