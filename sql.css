@@ -7,9 +7,6 @@
 #body{
     padding-left: 80px;
 }
-#ex1{
-  display: none;
-}
-#ponto1, #ponto2{
+#ex1, #ponto1, #ponto2{
   display:none;
 }
