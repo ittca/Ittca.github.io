@@ -2,13 +2,10 @@
     background:#ead487;
     font-family: 'Comic Sans MS'
     }
-p{
-    margin: 10px 90px;
-    
+#frase{
+  margin-top:-80px;
+  margin-left: 50px;
 }
-img{
-    background: gray;
-    border-radius: 10px;
-    padding:3px;
-    margin: 109px 0 0 375px ;
+#it_logo{
+  float:right;
 }
