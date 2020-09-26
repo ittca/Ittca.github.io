@@ -97,7 +97,8 @@
             </div>
           </div>
          <br><br>
-         <h3>2- usar Constrains, adicionar, alterar e remover colunas, dados e linhas</h3>
+         <h3 onclick='esconder2();' style="cursor: pointer;">2- usar Constrains, adicionar, alterar e remover colunas, dados e linhas</h3>
+         <div id="ponto2">
            <p>Vamos continuar o exercício criando a tabela pessoas.</p>
            <img src="./imagens/tabela_pessoas.jpg" alt="imagem da criação de uma tabela pessoas">
            <h4>Adicionar uma nova coluna</h4>
@@ -174,15 +175,16 @@
                <azul class="azul">truncate table </azul>pessoas <azul class="azul">;</azul><br>
                <azul class="azul">delete from </azul>pessoas <azul class="azul">;</azul>
            </p>
-
+        </div>
 
 
 
         </div>
     </div>
     <script type="text/javascript">
-      var ex1;
-      var p1;
+      var ex1 = 1;
+      var p1 = 1;
+      var p2 = 1;
       function esconder_ex1(){
         if (ex1==1){
           document.getElementById("ex1").style.display="inline";
@@ -201,6 +203,16 @@
         else {
           document.getElementById("ponto1").style.display="none";
           return p1=1;
+        }
+      }
+      function esconder2(){
+        if (p2==1){
+          document.getElementById("ponto2").style.display="inline";
+          return p2=0;
+        }
+        else {
+          document.getElementById("ponto2").style.display="none";
+          return p2=1;
         }
       }
     </script>
