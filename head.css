@@ -53,7 +53,7 @@ body {
 }
 
 .body_container {
-    min-height: 50vh;
+    min-height: 64vh;
     margin: auto;
     width: 860px;
     padding: 20px;
