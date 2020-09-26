@@ -27,7 +27,8 @@
         <cinza class="cinza"># Comentário de apenas uma linha</cinza>
         <br><cinza class="cinza">-- Comentário de apenas uma linha</cinza>
         <br><cinza class="cinza">/* Comentário de várias linhas */</cinza>
-        <h3>1- Criação, estruturação, introdução de dados e leitura de bd e suas tabelas</h3>
+        <h3 onclick='esconder1();' style="cursor: pointer;">1- Criação, estruturação, introdução de dados e leitura de bd e suas tabelas</h3>
+        <div id="ponto1">
         <p>
             <azul class="azul">show databases;</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;&#9;&#9;&#9;&#9;&#9;# mostra todas as bases de dados (bd)</cinza>
             <br>
@@ -67,7 +68,7 @@
             <texto style="white-space:pre">&#9;&#9;&#9;&#9;* significa todos os campos <br>&#9;&#9;&#9;&#9;podem-se escolher as colunas que se entender, separando os seus nomes por vírgula </texto><br>
             <azul class="azul">select </azul>titulo_da_coluna<azul class="azul"> from</azul> nome_da_tabela <br><azul class="azul">where</azul> qualquer_titulo_de_coluna = xpto<azul class="azul">;</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;# retorna titulo_de_coluna que tiver xpto em qualquer_titu...</cinza><br>
             <br><br>
-            <h3 onclick='esconder();' style="cursor: pointer;">Exercícios 1</h3>
+            <h3 onclick='esconder_ex1();' style="cursor: pointer;">Exercícios 1</h3>
             <div id="sql_exer_1">
               <a> Faça copy and paste de todas as perguntas e cole-as no seu novo ficheiro sql. <br>Elas vão aparecer como comentário e ajudam a identificar os passos, lembre-se o raio executa todos os comandos e o raio com um simbolo do rato executa apenas o último comando até ao ponto e vírgula. <br>Pode também usar os atalhos do teclado, ctrl + enter para apenas o último comando <br> ou ctrl + shift + enter para todos os comandos presentes no ficheiro.</a><br><br><br>
               <a>#1- Mostre todas as bases de dados que possue.</a><br><br>
@@ -94,6 +95,7 @@
               <a>#20- Mostre o modelo e a cor dos carros de certa marca.</a><br><br>
               <a>Parabéns!!, ao chegar aqui e se sentir confortável com estas questões e respostas superou o primeiro passo com destinção para um bom entendimento e usuabilidade da base de dados sql ou mysql. Se se sentir com vontade crie uma segunda tabela de nome "pessoas" e crie as suas colunas para mais tarde relacionarmos como compradores dos veículos</a>
             </div>
+          </div>
          <br><br>
          <h3>2- usar Constrains, adicionar, alterar e remover colunas, dados e linhas</h3>
            <p>Vamos continuar o exercício criando a tabela pessoas.</p>
@@ -179,15 +181,26 @@
         </div>
     </div>
     <script type="text/javascript">
-      var a = 0;
-      function esconder(){
-        if (a==1){
+      var ex1 = 0;
+      var p1 = 0;
+      function esconder_ex1(){
+        if (ex1==1){
           document.getElementById("sql_exer_1").style.display="inline";
-          return a=0;
+          return ex1=0;
         }
         else {
           document.getElementById("sql_exer_1").style.display="none";
-          return a=1;
+          return ex1=1;
+        }
+      }
+      function esconder1(){
+        if (p1==1){
+          document.getElementById("ponto1").style.display="inline";
+          return p1=0;
+        }
+        else {
+          document.getElementById("ponto1").style.display="none";
+          return p1=1;
         }
       }
     </script>
