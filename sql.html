@@ -68,7 +68,6 @@
             <texto style="white-space:pre">&#9;&#9;&#9;&#9;* significa todos os campos <br>&#9;&#9;&#9;&#9;podem-se escolher as colunas que se entender, separando os seus nomes por vírgula </texto><br>
             <azul class="azul">select </azul>titulo_da_coluna<azul class="azul"> from</azul> nome_da_tabela <br><azul class="azul">where</azul> qualquer_titulo_de_coluna = xpto<azul class="azul">;</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;# retorna titulo_de_coluna que tiver xpto em qualquer_titu...</cinza><br>
             <br><br>
-        </div>
             <h4 onclick='esconder_ex1();' style="cursor: pointer; white-space:pre;">&#9;Exercício 1</h4>
             <div id="ex1">
               <a> Faça copy and paste de todas as perguntas e cole-as no seu novo ficheiro sql. <br>Elas vão aparecer como comentário e ajudam a identificar os passos, lembre-se o raio executa todos os comandos e o raio com um simbolo do rato executa apenas o último comando até ao ponto e vírgula. <br>Pode também usar os atalhos do teclado, ctrl + enter para apenas o último comando <br> ou ctrl + shift + enter para todos os comandos presentes no ficheiro.</a><br><br><br>
@@ -97,6 +96,7 @@
               <a>Parabéns!!, ao chegar aqui e se sentir confortável com estas questões e respostas superou o primeiro passo com destinção para um bom entendimento e usuabilidade da base de dados sql ou mysql. Se se sentir com vontade crie uma segunda tabela de nome "pessoas" e crie as suas colunas para mais tarde relacionarmos como compradores dos veículos</a>
          <br><br>
         </div>
+      </div>
          <h3 onclick='esconder2();' style="cursor: pointer;">2- usar Constrains, adicionar, alterar e remover colunas, dados e linhas</h3>
          <div id="ponto2">
            <p>Vamos continuar o exercício criando a tabela pessoas.</p>
@@ -105,43 +105,43 @@
            <p>
                <azul class="azul">Alter table </azul>pessoas<br>
                <azul class="azul">add column </azul>profissao varchar(20)<azul class="azul">;</azul><br>
-               #Vai adicionar a nova coluna no final da tabela, o campo column é facultativo
+               <cinza class="cinza">#Vai adicionar a nova coluna no final da tabela, o campo column é facultativo</cinza>
            </p><br>
            <h4>Remover uma coluna</h4>
            <p>
                <azul class="azul">Alter table </azul>pessoas<br>
                <azul class="azul">drop column </azul>profissao <azul class="azul">;</azul><br>
-               #Vai apagar a coluna, o campo column é facultativo
+               <cinza class="cinza">#Vai apagar a coluna, o campo column é facultativo</cinza>
            </p><br>
            <h4>adicionar uma coluna em certa posição</h4>
            <p>
                <azul class="azul">Alter table </azul>pessoas<br>
                <azul class="azul">add column </azul>profissao varchar(20) <azul class="azul">after</azul> nome<azul class="azul">;</azul><br>
-               #Vai adicionar uma nova coluna depois da coluna "nome", o campo column é facultativo
+               <cinza class="cinza">#Vai adicionar uma nova coluna depois da coluna "nome", o campo column é facultativo</cinza>
            </p>
            <p> Ou se for para a primeira posição <br>
                <azul class="azul">Alter table </azul>pessoas<br>
                <azul class="azul">drop column </azul>profissao varchar(20) <azul class="azul">first ;</azul><br>
-               #Vai adicionar uma nova coluna na primeira posição, o campo column é facultativo
+               <cinza class="cinza">#Vai adicionar uma nova coluna na primeira posição, o campo column é facultativo</cinza>
            </p><br>
            <h4>Renomear o nome de uma tabela</h4>
            <p>
                <azul class="azul">Alter table </azul>pessoas<br>
                <azul class="azul">rename to </azul>novas_pessoas<azul class="azul">;</azul><br>
-               #Vai renomear o nome da tabela
+               <cinza class="cinza">#Vai renomear o nome da tabela</cinza>
            </p><br>
            <h4>Renomear o nome de uma coluna</h4>
            <p>
                <azul class="azul">Alter table </azul>pessoas<br>
                <azul class="azul">change column </azul>nacionalidade pais varchar(20)<azul class="azul">;</azul><br>
-               #Vai renomear o nome da coluna, column é opcional
+               <cinza class="cinza">#Vai renomear o nome da coluna, column é opcional</cinza>
            </p><br>
            <h4>Constrains</h4>
            <p>
               Os constrains são inseridos a seguir ao tipo_de_dados aquando se cria a coluna na tabela. <br><br>
                <azul class="azul">null</azul><br>
                <azul class="azul">not null</azul><br>
-               <azul class="azul">auto-increment</azul><texto style="white-space:pre">&#9;&#9;&#9;&#9;&#9;&#9;# apenas quando se tem uma chave primária</texto>
+               <azul class="azul">auto-increment</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;&#9;&#9;&#9;&#9;# apenas quando se tem uma chave primária</cinza>
                <azul class="azul">unique</azul><br>
                <azul class="azul">unsigned</azul><br>
                <azul class="azul">default '2020'</azul><br>
@@ -151,24 +151,24 @@
            <p>
                <azul class="azul">update </azul>pessoas<br>
                <azul class="azul">set </azul>nome ='Maria'<br>
-               <azul class="azul">where</azul> numero = '1' <azul class="azul">;</azul><texto style="white-space:pre">&#9;&#9;&#9;&#9;&#9;# Vai corrigir o nome para 'maria'</texto><br>
+               <azul class="azul">where</azul> numero = '1' <azul class="azul">;</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;&#9;&#9;&#9;# Vai corrigir o nome para 'maria'</cinza><br>
            </p>
            <p>
                <azul class="azul">update </azul>pessoas<br>
                <azul class="azul">set </azul>nome ='Maria', altura = '1,65'<br>
                <azul class="azul">where</azul> numero = '1' <br>
-               <azul class="azul">limit</azul> 1 <azul class="azul">;</azul><texto style="white-space:pre">&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;# Vai corrigir os dados com o limite de uma linha</texto><br>
+               <azul class="azul">limit</azul> 1 <azul class="azul">;</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;# Vai corrigir os dados com o limite de uma linha</cinza><br>
            </p>
            <br>
            <h4>Remover uma linha</h4>
            <p>
                <azul class="azul">delete from </azul>pessoas<br>
-               <azul class="azul">where</azul> numero = '1' <azul class="azul">;</azul><texto style="white-space:pre">&#9;&#9;&#9;&#9;&#9;# Vai apagar as linhas com numero = 1</texto><br>
+               <azul class="azul">where</azul> numero = '1' <azul class="azul">;</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;&#9;&#9;&#9;# Vai apagar as linhas com numero = 1</cinza><br>
            </p>
            <p>
                <azul class="azul">delete from </azul>pessoas<br>
                <azul class="azul">where</azul> numero = '1' <br>
-               <azul class="azul">limit</azul> 3 <azul class="azul">;</azul><texto style="white-space:pre">&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;# vai apagar apenas as três primeiras linhas com numero = 1</texto><br>
+               <azul class="azul">limit</azul> 3 <azul class="azul">;</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;# vai apagar apenas as três primeiras linhas com numero = 1</cinza><br>
            </p><br>
            <h4>Remover todas as linhas</h4>
            <p>
