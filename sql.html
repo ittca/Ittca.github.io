@@ -67,32 +67,33 @@
             <texto style="white-space:pre">&#9;&#9;&#9;&#9;* significa todos os campos <br>&#9;&#9;&#9;&#9;podem-se escolher as colunas que se entender, separando os seus nomes por vírgula </texto><br>
             <azul class="azul">select </azul>titulo_da_coluna<azul class="azul"> from</azul> nome_da_tabela <br><azul class="azul">where</azul> qualquer_titulo_de_coluna = xpto<azul class="azul">;</azul><cinza style="white-space:pre" class="cinza">&#9;&#9;# retorna titulo_de_coluna que tiver xpto em qualquer_titu...</cinza><br>
             <br><br>
-            <h3>Exercício 1</h3>
-            <a> Faça copy and paste de todas as perguntas e cole-as no seu novo ficheiro sql. <br>Elas vão aparecer como comentário e ajudam a identificar os passos, lembre-se o raio executa todos os comandos e o raio com um simbolo do rato executa apenas o último comando até ao ponto e vírgula. <br>Pode também usar os atalhos do teclado, ctrl + enter para apenas o último comando <br> ou ctrl + shift + enter para todos os comandos presentes no ficheiro.</a><br><br><br>
-            <a>#1- Mostre todas as bases de dados que possue.</a><br><br>
-            <a>#2- Crie uma base de dados de nome "bd".</a><br><br>
-            <a>#3- Verifique todas as bases de dados que possue.</a><br><br>
-            <a>#4- Apague a base de dados de nome "bd".</a><br><br>
-            <a>#5- Repita as questões 1 a 4 pelo menos mais duas vezes, pode escolher o nome para a bd.</a><br><br>
-            <a>#6- Crie uma nova base de dados de nome "Stander", verifique o nome das suas tabelas. Não se esqueça de usar a bd primeiro.</a><br><br>
-            <a>#7- Crie uma tabela de nome "carros" e com os campos "numero", "marca", "modelo", "cor","matricula", "data_de_compra", use "int auto_increment","varchar(20)" e "date" como tipo de dados.</a><br><br>
-            <a>#8- Mostre as tabelas que possue.</a><br><br>
-            <a>#9- Insira pelo menos 4 registos na tabela "carros".</a><br><br>
-            <a>#10- Veja todos os dados da tabela "carros". O seu comando deve começar por "select".</a><br><br>
-            <a>#11- Veja a descrição da tabela "carros".</a><br><br>
-            <a>#12- Apague a tabela "carros".</a><br><br>
-            <a>#13- Mostre as tabelas que possue.</a><br><br>
-            <a>#14- Volte a criar a tabela carros.</a><br><br>
-            <a>#15- Volte a inserir os registos na tabela carros</a><br><br>
-            <a>#16- Mostre as tabelas que possue.</a><br><br>
-            <a>#15- Mostre apenas as marcas dos carros. usar o select.</a><br><br>
-            <a>#16- Mostre apenas as marcas e o modelo dos carros</a><br><br>
-            <a>#17- Mostre todos os registos da tabela carros</a><br><br>
-            <a>#18- Mostre apenas as matriculas dos carros de certa marca. utilizar o select e também o where.</a><br><br>
-            <a>#19- Mostre apenas a cor dos carros de certo modelo.</a><br><br>
-            <a>#20- Mostre o modelo e a cor dos carros de certa marca.</a><br><br>
-            <a>Parabéns!!, ao chegar aqui e se sentir confortável com estas questões e respostas superou o primeiro passo com destinção para um bom entendimento e usuabilidade da base de dados sql ou mysql. Se se sentir com vontade crie uma segunda tabela de nome "pessoas" e crie as suas colunas para mais tarde relacionarmos como compradores dos veículos</a>
-
+            <h3 onclick="esconder();">Exercício 1</h3>
+            <div id="sql_exer_1">
+              <a> Faça copy and paste de todas as perguntas e cole-as no seu novo ficheiro sql. <br>Elas vão aparecer como comentário e ajudam a identificar os passos, lembre-se o raio executa todos os comandos e o raio com um simbolo do rato executa apenas o último comando até ao ponto e vírgula. <br>Pode também usar os atalhos do teclado, ctrl + enter para apenas o último comando <br> ou ctrl + shift + enter para todos os comandos presentes no ficheiro.</a><br><br><br>
+              <a>#1- Mostre todas as bases de dados que possue.</a><br><br>
+              <a>#2- Crie uma base de dados de nome "bd".</a><br><br>
+              <a>#3- Verifique todas as bases de dados que possue.</a><br><br>
+              <a>#4- Apague a base de dados de nome "bd".</a><br><br>
+              <a>#5- Repita as questões 1 a 4 pelo menos mais duas vezes, pode escolher o nome para a bd.</a><br><br>
+              <a>#6- Crie uma nova base de dados de nome "Stander", verifique o nome das suas tabelas. Não se esqueça de usar a bd primeiro.</a><br><br>
+              <a>#7- Crie uma tabela de nome "carros" e com os campos "numero", "marca", "modelo", "cor","matricula", "data_de_compra", use "int auto_increment","varchar(20)" e "date" como tipo de dados.</a><br><br>
+              <a>#8- Mostre as tabelas que possue.</a><br><br>
+              <a>#9- Insira pelo menos 4 registos na tabela "carros".</a><br><br>
+              <a>#10- Veja todos os dados da tabela "carros". O seu comando deve começar por "select".</a><br><br>
+              <a>#11- Veja a descrição da tabela "carros".</a><br><br>
+              <a>#12- Apague a tabela "carros".</a><br><br>
+              <a>#13- Mostre as tabelas que possue.</a><br><br>
+              <a>#14- Volte a criar a tabela carros.</a><br><br>
+              <a>#15- Volte a inserir os registos na tabela carros</a><br><br>
+              <a>#16- Mostre as tabelas que possue.</a><br><br>
+              <a>#15- Mostre apenas as marcas dos carros. usar o select.</a><br><br>
+              <a>#16- Mostre apenas as marcas e o modelo dos carros</a><br><br>
+              <a>#17- Mostre todos os registos da tabela carros</a><br><br>
+              <a>#18- Mostre apenas as matriculas dos carros de certa marca. utilizar o select e também o where.</a><br><br>
+              <a>#19- Mostre apenas a cor dos carros de certo modelo.</a><br><br>
+              <a>#20- Mostre o modelo e a cor dos carros de certa marca.</a><br><br>
+              <a>Parabéns!!, ao chegar aqui e se sentir confortável com estas questões e respostas superou o primeiro passo com destinção para um bom entendimento e usuabilidade da base de dados sql ou mysql. Se se sentir com vontade crie uma segunda tabela de nome "pessoas" e crie as suas colunas para mais tarde relacionarmos como compradores dos veículos</a>
+            </div>
          <br><br>
          <h3>2- usar Constrains, adicionar, alterar e remover colunas, dados e linhas</h3>
            <p>Vamos continuar o exercício criando a tabela pessoas.</p>
@@ -164,7 +165,7 @@
            <p>
                <azul class="azul">delete from </azul>pessoas<br>
                <azul class="azul">where</azul> numero = '1' <br>
-               <azul class="azul">limit</azul> 1 <azul class="azul">;</azul><texto style="white-space:pre">&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;# vai apagar apenas a primeira linha com numero = 1</texto><br>
+               <azul class="azul">limit</azul> 3 <azul class="azul">;</azul><texto style="white-space:pre">&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;# vai apagar apenas as três primeiras linhas com numero = 1</texto><br>
            </p><br>
            <h4>Remover todas as linhas</h4>
            <p>
@@ -177,6 +178,19 @@
 
         </div>
     </div>
+    <script type="text/javascript">
+      var a;
+      function esconder(){
+        if (a==1){
+          document.getElementById("sql_exer_1").style.display="inline";
+          return a=0;
+        }
+        else {
+          document.getElementById("sql_exer_1").style.display="none";
+          return a=1;
+        }
+      }
+    </script>
 </body>
 <footer>
     <p style="text-align: center;"><span id="year"></span> &copy; tiago calado</p>
