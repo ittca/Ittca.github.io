@@ -6,26 +6,21 @@
   <link rel="icon" href="./imagens/ittca_logo.png">
   <title>ittca - html live ide</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" integrity="sha512-GZ1RIgZaSc8rnco/8CXfRdCpDxRCphenIiZ2ztLy3XQfCbQUSCuk8IudvNHxkRA3oUg6q0qejgN/qqyG1duv5Q==" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./css/editor.css">
-  <link rel="stylesheet" href="./css/head.css">
+  <link rel="stylesheet" href="./css/full_editor.css">
 </head>
 <body onload='ready()'>
-  <div class="menu-tabs">
-      <ul>
-          <li><a href="index.html" id="index"></a></li>
-          <li><a href="sql.html" id="sql">sql</a></li>
-          <li><a href="wordpress.html" id="wordpress">wordpress</a></li>
-          <li><a href="editor.html" id="ide" style="height: 18.5px; background:#fff;">ide<img src="./imagens/full.png" alt="full-screen" class="fullscreen" onclick="window.open('full_editor.html','_blank');"></a></li>
-      </ul>
-  </div>
-  <div class="body_container">
     <div id='container'>
         <div id="editor" style='resize:horizontal;'>
         </div>
         <iframe id='iframe' frameBorder="0" >
         </iframe>
+        <footer class="footer">
+            <p style="text-align: center;"><span id="year"></span> &copy; tiago calado<img src="./imagens/full.png" alt="full-screen" class="fullscreen" onclick="window.open('editor.html','_top');"></p>
+            <script>
+                document.getElementById("year").innerHTML = new Date().getFullYear();
+            </script>
+        </footer>
     </div>
-  </div>
 <script>
 function update()
 {
@@ -75,10 +70,4 @@ setupEditor();
 update();
 </script>
 </body>
-<footer>
-    <p style="text-align: center;"><span id="year"></span> &copy; tiago calado</p>
-    <script>
-        document.getElementById("year").innerHTML = new Date().getFullYear();
-    </script>
-</footer>
 </html>
