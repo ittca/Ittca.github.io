@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./imagens/ittca_logo.png">
+  <title>ittca - html live ide</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" integrity="sha512-GZ1RIgZaSc8rnco/8CXfRdCpDxRCphenIiZ2ztLy3XQfCbQUSCuk8IudvNHxkRA3oUg6q0qejgN/qqyG1duv5Q==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/editor.css">
+  <link rel="stylesheet" href="./css/head.css">
+</head>
+<body onload='ready()'>
+  <div class="menu-tabs">
+      <ul>
+          <li><a href="index.html" id="index"></a></li>
+          <li><a href="sql.html" id="sql">sql</a></li>
+          <li><a href="wordpress.html" id="wordpress">wordpress</a></li>
+          <li><a href="editor.html" id="ide" style="height: 18.5px; background:#fff;">ide</a></li>
+      </ul>
+  </div>
+  <div class="body_container">
+    <div id='container'>
+        <div id="editor" style='resize:horizontal;'>
+        </div>
+        <iframe id='iframe' frameBorder="0" >
+        </iframe>
+    </div>
+  </div>
+<script>
+function update()
+{
+var idoc = document.getElementById('iframe').contentWindow.document;
+
+idoc.open();
+idoc.write(editor.getValue());
+idoc.close();
+}
+
+function setupEditor()
+{
+window.editor = ace.edit("editor");
+editor.setTheme("ace/theme/monokai");
+editor.getSession().setMode("ace/mode/html");
+editor.setValue(`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>html css js live</title>
+</head>
+<body>
+
+</body>
+</html>`,1); //1 = moves cursor to end
+
+editor.getSession().on('change', function() {
+  update();
+});
+
+editor.focus();
+
+
+editor.setOptions({
+  fontSize: "11pt",
+  showLineNumbers: true,
+  showGutter: true,
+  vScrollBarAlwaysVisible:false,
+  enableBasicAutocompletion: true, enableLiveAutocompletion: true
+});
+
+editor.setShowPrintMargin(true);
+editor.setBehavioursEnabled(true);
+}
+
+setupEditor();
+update();
+</script>
+</body>
+<footer>
+    <p style="text-align: center;"><span id="year"></span> &copy; tiago calado</p>
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
+</footer>
+</html>

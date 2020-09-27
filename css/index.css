@@ -1,0 +1,12 @@
+.body_container{
+    background:#ead487;
+    font-family: 'Comic Sans MS'
+    }
+
+#frase{
+  margin-top:-80px;
+  margin-left: 50px;
+}
+#it_logo{
+  float:right;
+}

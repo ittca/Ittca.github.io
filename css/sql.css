@@ -1,0 +1,12 @@
+.azul {
+    color: blue;
+}
+.cinza{
+    color: gray;
+}
+#body{
+    padding-left: 80px;
+}
+#ex1, #ponto0, #ponto1, #ponto2{
+  display:none;
+}

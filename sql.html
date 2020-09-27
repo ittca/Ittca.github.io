@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>ittca - sql</title>
     <link rel="icon" href="./imagens/ittca_logo.png">
-    <link rel="stylesheet" href="head.css">
-    <link rel="stylesheet" href="sql.css">
+    <link rel="stylesheet" href="./css/head.css">
+    <link rel="stylesheet" href="./css/sql.css">
 </head>
 <div id="header"></div>
 
@@ -16,16 +15,19 @@
             <li><a href="index.html" id="index"></a></li>
             <li><a href="sql.html" id="sql" style="height: 18.5px;background:#fff">sql</a></li>
             <li><a href="wordpress.html" id="wordpress">wordpress</a></li>
+            <li><a href="editor.html" id="editor">ide</a></li>
         </ul>
     </div>
     <div class="body_container">
        <div id="body">
         <h1 style="padding-left:200px;">resenha sql / mysql</h1>
-        <h3>0 - Pormenores interessantes</h3>
-        <h4>Existem 3 maneiras de escrever comentários:</h4>
-        <cinza class="cinza"># Comentário de apenas uma linha</cinza>
-        <br><cinza class="cinza">-- Comentário de apenas uma linha</cinza>
-        <br><cinza class="cinza">/* Comentário de várias linhas */</cinza>
+        <h3 onclick='esconder0();' style="cursor: pointer;">0 - Pormenores interessantes</h3>
+        <div id="ponto0">
+          <h4>Existem 3 maneiras de escrever comentários:</h4>
+          <cinza class="cinza"># Comentário de apenas uma linha</cinza>
+          <br><cinza class="cinza">-- Comentário de apenas uma linha</cinza>
+          <br><cinza class="cinza">/* Comentário de várias linhas */</cinza>
+          </div>
         <h3 onclick='esconder1();' style="cursor: pointer;">1- Criação, estruturação, introdução de dados e leitura de bd e suas tabelas</h3>
         <div id="ponto1">
         <p>
@@ -182,6 +184,7 @@
     </div>
     <script type="text/javascript">
       var ex1 = 1;
+      var p0 = 1;
       var p1 = 1;
       var p2 = 1;
       function esconder_ex1(){
@@ -192,6 +195,16 @@
         else {
           document.getElementById("ex1").style.display="none";
           return ex1=1;
+        }
+      }
+      function esconder0(){
+        if (p0==1){
+          document.getElementById("ponto0").style.display="inline";
+          return p0=0;
+        }
+        else {
+          document.getElementById("ponto0").style.display="none";
+          return p0=1;
         }
       }
       function esconder1(){

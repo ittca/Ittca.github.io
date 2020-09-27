@@ -1,0 +1,21 @@
+#container {
+  margin: -20px;
+	width:auto;
+  white-space : nowrap;
+  overflow : hidden;
+  position:relative;
+}
+#editor{
+  min-height: 586px;
+  width:40%;
+  display:inline-block;
+}
+
+#iframe {
+	min-height:586px;
+	display:inline-block;
+	width: 60%;
+  background:lightgray;
+}
+/* disable tag matching
+.ace_editor .ace_marker-layer .ace_bracket { display: none } */
