@@ -26,12 +26,70 @@
         <azul class="azul"><br>index.php <br>style.css <br><br></azul>
         O index pode conter apenas uma estrutura html e o style a decoração que pretendermos, no entanto vários são outros os ficheiros que vão permitir que a plataforma wordpress possa introduzir e mudar dados ao nosso tema, e o wordpress também têm as suas próprias funções para estas questões. As Linguagens permitidas são html, css, javascript e php. <br>
         O Style.css deverá começar com os comentários: <br> /* <br>Theme Name: resenha wordpress <br>Author: Tiago Calado <br> Version: 1.0 <br>*/ <br> vair dar ao tema os dados mencionados, e o wordpress vai lê-los e disponibilizá-los no lugar apropriado. <br><br>
-        <azul class="azul">header.php <br>footer.php</azul><br><br>
-        Ao usar estes dois ficheiros vamos iniciar a estrutura html no header.php e terminá-la no footer.php, depois no index.php usa-se código php e chama-se no ínicio a get_header() e no fim get_footer(). <br>
-        </p>
-        <h5>header.php</h5>
-        <p></p>
-    </div>
+        <p>Esta estrutura minima será o suficiente para que o wordpress assuma os ficheiros como tema, para tal deverá-se criar uma pasta nomeada com o nome do tema. <br>Dentro da pasta guardam-se estes dois ficheiros e guarda-se a pasta dentro do nosso wordpress ~/wp-content/themes/ . <br>Neste momento já podemos ir dentro do dashboard do wordpress e nos temas instalados temos o nosso tema que podemos ativar, não vai ter nada, mas está um tema criado e aceite pelo wordpress. </p>
+        <p>Para adicionar uma foto ao tema, é apenas necessário ter uma foto com umas certas medidas que wordpress aceita, com o nome <azul class="azul">screenshot.png</azul> ou .jpg ou alguns poucos mais formatos em ~/wp-content/themes/ . Desta forma já teremos uma imagem para o nosso tema.</p>
+        <p>Podemos escrever codigo html no index.php, mas deixariamos de utilizar toda a potencialidade do wordpress, ora para começar a usar as usas funções e dinamismo, pois depois podemos mudar isto tudo dentro do dasboard, podemos começar por escrever no nosso index.php:</p>
+        <p>&lt?php <br>
+        get_header(); <br>
+        get_footer(); </p>
+        <p>Apenas é necessário iniciar o php, não necessitamos de o fechar e com as funções get_header e get_footer o wordpress automaticamente escreve no nosso site os dados que possui, que podem alterados no dasboard.</p>
+        <p>Ao adicionar mos os ficheiro header.php e footer.php o wp deixa de usar a sua predefinição e vai apresentar no header e no footer o que escrevermos nestes ficheiros. <br> É aqui que no header.php que vamos abrir a nossa estrutura html até o abrir do corpo (inclusive), a tag fechar body e fechar html vão para o footer.php</p>
+        <azul class="azul">header.php <br>footer.php</azul>
+        <p>Ao usar estes dois ficheiros vamos iniciar a estrutura html no header.php e terminá-la no footer.php, depois no index.php usa-se código php e chama-se no ínicio a get_header() e no fim get_footer(). <br></p>
+        <p>Adiciona-se dentro do head <azul class="azul">wp_head()</azul>.</p>
+        <p>Adiciona-se antes do fechar da tag body <azul class="azul">wp_footer()</azul>.</p>
+        <p>A partir daqui começa um entrelaçado de colocar aqui e colocar ali e tudo funciona dentro do universo wp na qual é de alguma forma um pouco difícel de escrever fazendo sentido para todos os leitores, isto caso até aqui esteja a fazer sentido. <br>
+        Mas a estrutura é muito simples e bastante eficaz. Neste momento vou apenas despejar pequenas partes de código que podem ser implementadas, mais tarde talvez explique por escrito ou video.</p>
+        <h4>Adicionar ficheiros .css e .js</h4>
+        <p>function tiagos_pedidos() { <br>
+          wp_enqueue_style('tiagoscss', get_template_directory_uri().'/css/tiagos.css', array(), '0.0.1', 'all'); <br>
+  wp_enqueue_script('tiagosjs', get_template_directory_uri().'/js/tiagos.js', array(), '0.0.1', true); <br>
+} <br>
+add_action('wp_enqueue_scripts', 'tiagos_pedidos');</p>
+  <h4>Adicionar menus</h4>
+  <p>function ad_menu(){ <br>
+  add_theme_support('menus');   /* ativa a opção menus no wordpress */ <br>
+  register_nav_menu('menu-primario', 'Menu Principal'); <br>
+  register_nav_menu('menu-secundario', 'Menu Secundario'); <br>
+} <br>
+add_action('init','ad_menu');</p>
+ <p>Para os menus aparecerem usa-se por exemplo no inicio da tag body <br> wp_nav_menu(array('theme_location'=>'menu-primario')); </p>
+<h4>Adicionar opções do wp no personalizar do wp</h4>
+<p>add_theme_support('menus'); <br>
+add_theme_support('custom-background');<br>
+add_theme_support('custom-header');<br>
+add_theme_support('post-thumbnails');<br>
+&ltimg src="&lt?php header_image(); ?&gt" height="&lt?php echo get_custom_header()->height; ?&gt" width="&lt?php echo get_custom_header()->width; ?&gt" alt=""&gt</p>
+<h4>Adicionar diferentes classes para diferentes páginas</h4>
+<p>&lt?php <br>
+    if(is_front_page()): // detecta se é a página inicial, para verficar se é a página do blog usa-se is_home(); <br>
+      $tiagos_class = array('tc-home', 'tc-class'); // não necessário mas tem uma segunda classe <br>
+    else: <br>
+      $tiagos_class = array('tc-blog'); <br>
+    endif; <br>
+   ?&gt <br>
+  &ltbody &lt?php body_class($tiagos_class); ?&gt&gt</p>
+  <h4>Obter dados do site</h4>
+  <p><azul class="azul">bloginfo('name'); <cinza class="cinza">// obtem o nome do site</cinza> <br> bloginfo('description');<cinza class="cinza">// obtem a descrição do site</cinza> </azul></p>
+<h4>Usar páginas especificas</h4>
+<p>Pode-se criar um template criando um ficheiro de nome page-algo.php e inserindo no inicio o nome do template: <br>
+  /* <br> Template Name: Pagina sem titulo <br> */ <br>Agora sempre que se cria uma página ou numa já existente pode-se escolher este template.</p>
+<p>Pode-se também usar páginas especificas para determinadas páginas usando a slag criando o ficheiro page-slug_name.php ou melhor ainda usando o id especifico da pagina como por exemplo page-24.php</p>
+<h4>Loop para blog e conteúdo de páginas</h4>
+<p>if (have_posts()):
+  while(have_posts()): <br>
+    the_post();?&gt <br>
+    &ltdiv class="tc-blog"&gt <br>
+      &lth3&gt&lt?php the_title();?&gt&lt/h3&gt <br>
+      &ltsmall&gtPosted on: &lt?php the_time('j F Y');?&gt at &lt?php the_time('G:i'); ?&gt in &lt?php the_category();?&gt&lt/small&gt <br>
+      &ltp&gt &lt?php the_content(); ?&gt <br>
+    &lt/div&gt&lt?php <br>
+  endwhile; <br>
+endif; <br>
+</p>
+
+
+</div>
 </body>
 <footer>
     <p style="text-align: center;"><span id="year"></span> &copy; tiago calado</p>
