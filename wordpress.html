@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./css/wordpress.css">
 </head>
 <div id="header"></div>
-
 <body>
     <div class="menu-tabs">
         <ul>
@@ -56,10 +55,18 @@ add_action('init','ad_menu');</p>
  <p>Para os menus aparecerem usa-se por exemplo no inicio da tag body <br> wp_nav_menu(array('theme_location'=>'menu-primario')); </p>
 <h4>Adicionar opções do wp no personalizar do wp</h4>
 <p>add_theme_support('menus'); <br>
-add_theme_support('custom-background');<br>
+wp_nav_menu(array('theme_location'=>'menu-primario')); <br><br>
+add_theme_support('custom-background');<br><br>
 add_theme_support('custom-header');<br>
-add_theme_support('post-thumbnails');<br>
-&ltimg src="&lt?php header_image(); ?&gt" height="&lt?php echo get_custom_header()->height; ?&gt" width="&lt?php echo get_custom_header()->width; ?&gt" alt=""&gt</p>
+&ltimg src="&lt?php header_image(); ?&gt" height="&lt?php echo get_custom_header()->height; ?&gt" width="&lt?php echo get_custom_header()->width; ?&gt" alt=""&gt <br><br>
+add_theme_support('post-thumbnails');<br> the_post_thumbnail('thumbnail'); <br><br>
+add_theme_support('post-formats', array('aside', 'image', 'video'));<br>
+echo 'This is the format:'.get_post_format() <br>
+get_template_part('content', get_post_format()); <cinza class="cinza">// vai usar o content.php</cinza><br>
+O segundo parametro vai fazer procurar se a pagina tem um post_format, se tiver vai usar o ficheiro content-post_format_name.php em vez do content.<br><br>
+
+
+</p>
 <h4>Adicionar diferentes classes para diferentes páginas</h4>
 <p>&lt?php <br>
     if(is_front_page()): // detecta se é a página inicial, para verficar se é a página do blog usa-se is_home(); <br>
@@ -87,7 +94,16 @@ add_theme_support('post-thumbnails');<br>
   endwhile; <br>
 endif; <br>
 </p>
-
+<h4>Falta a pasta temporária / sem memória suficiente</h4>
+<p>info.php com phpinfo(); <br> Dentro do php.ini para a falta da pasta temporária, dar o caminho para uma pasta com esse efeito: <br>
+upload_tmp_dir = /tmp <br>
+em wp-config.php adicionar mesmo antes de "E é tudo. Pare de editar!" adicionar: <br>
+define('WP_TEMP_DIR', dirname(_FILE_). '/wp-content/temp/');<br>
+Em wp-content criar uma pasta de nome temp <br>
+em linux:  sudo chmod a+wrx .../wp-content/temp</p>
+<p>Para corrigir a memória de upload permitida alterar em php.ini: <br> upload_max_filesize = 512M <br> post_max_size = 512M</p>
+<h4>Debug ativo para desenvolvedores</h4>
+<p>Em wp-config.php: <br>define( 'WP_DEBUG', true ); <cinza class="cinza">// false para terminar o debug</cinza></p>
 
 </div>
 </body>
