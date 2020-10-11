@@ -104,7 +104,22 @@ em linux:  sudo chmod a+wrx .../wp-content/temp</p>
 <p>Para corrigir a memória de upload permitida alterar em php.ini: <br> upload_max_filesize = 512M <br> post_max_size = 512M</p>
 <h4>Debug ativo para desenvolvedores</h4>
 <p>Em wp-config.php: <br>define( 'WP_DEBUG', true ); <cinza class="cinza">// false para terminar o debug</cinza></p>
-
+<h4>sidebar</h4>
+<p>function tiagos_widget_setup(){ <br>
+  register_sidebar(array( <br>
+    'name' => 'sidebar', <br>
+    'id'   => 'sidebar-1', <br>
+    'class'=> 'sidebar-1', // o wp imprime a classe como  sidebar-sidebar-1 <br>
+    'description'=> 'Standard sidebar', <br>
+    'before_widget'=> '&ltaside id="%1$s" class="widget %2$s"&gt', <br>
+    'after_widget' => '&lt/aside&gt', <br>
+    'before_title' => '&lth1 class="widget-title"&gt', <br>
+    'after_tittle' => '&lt/h1&gt', <br>
+  )); <br>
+} <br>
+add_action('widgets_init','tiagos_widget_setup');</p>
+<p>esta função em functions.php vai ativar o sidebar, agora já vai aparecer a opção para configurar o sidebar, para implementar podemos usar o sidebar.php <br>
+dynamic_sidebar('sidebar-1'); <br> no entanto é necessário chamar o sidebar.php com get_sidebar(); no index.php por exemplo</p>
 </div>
 </body>
 <footer>
