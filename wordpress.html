@@ -63,7 +63,8 @@ add_theme_support('post-thumbnails');<br> the_post_thumbnail('thumbnail'); <br><
 add_theme_support('post-formats', array('aside', 'image', 'video'));<br>
 echo 'This is the format:'.get_post_format() <br>
 get_template_part('content', get_post_format()); <cinza class="cinza">// vai usar o content.php</cinza><br>
-O segundo parametro vai fazer procurar se a pagina tem um post_format, se tiver vai usar o ficheiro content-post_format_name.php em vez do content.<br><br>
+O segundo parametro vai fazer procurar se a pagina tem um post_format, se tiver vai usar o ficheiro content-post_format_name.php em vez do content.<br>
+<p>add_theme_support('html5',array('search-form')); <cinza class="cinza">// para ativar o suporte html5</cinza></p><br><br>
 
 
 </p>
@@ -104,7 +105,7 @@ em linux:  sudo chmod a+wrx .../wp-content/temp</p>
 <p>Para corrigir a memória de upload permitida alterar em php.ini: <br> upload_max_filesize = 512M <br> post_max_size = 512M</p>
 <h4>Debug ativo para desenvolvedores</h4>
 <p>Em wp-config.php: <br>define( 'WP_DEBUG', true ); <cinza class="cinza">// false para terminar o debug</cinza></p>
-<h4>sidebar</h4>
+<h4>sidebar and widget areas</h4>
 <p>function tiagos_widget_setup(){ <br>
   register_sidebar(array( <br>
     'name' => 'sidebar', <br>
@@ -120,6 +121,72 @@ em linux:  sudo chmod a+wrx .../wp-content/temp</p>
 add_action('widgets_init','tiagos_widget_setup');</p>
 <p>esta função em functions.php vai ativar o sidebar, agora já vai aparecer a opção para configurar o sidebar, para implementar podemos usar o sidebar.php <br>
 dynamic_sidebar('sidebar-1'); <br> no entanto é necessário chamar o sidebar.php com get_sidebar(); no index.php por exemplo</p>
+<h4>wp_query</h4>
+<p>$args = array ( <br>
+  'type'  => 'post', <br>
+  'posts_per_page' => -1, <br>
+  'category_name'  => 'Tutoriais', <br>
+); <br>
+$lastBlog = new WP_Query($args); // escolher todos (-1), cat=23  (para escolher a categoria por id) <br>
+if ($lastBlog->have_posts()): <br>
+  while($lastBlog->have_posts()): <br>
+    $lastBlog->the_post(); <br>
+    get_template_part('content',get_post_format()); <br>
+  endwhile; <br>
+endif; <br>
+wp_reset_postdata();  // fazer o reset ao wp_query</p>
+<h4>WP_Query com categorias</h4>
+<p><?php<br>
+get_header();<br>
+$args_cat = array(<br>
+  'include' => '6, 1, 7'<br>
+);<br>
+$categories = get_categories($args_cat);<br>
+foreach($categories as $category):<br>
+  $args = array (<br>
+    'type'  => 'post',<br>
+    'posts_per_page' => 1,<br>
+    'category__in' => $category->term_id,  // restringir por id de categoria<br>
+    'category__not_in' => array(),  // excluir por id de categoria<br>
+  );<br>
+  $lastBlog = new WP_Query($args); // criar um query para poder mexer sem tocar no Principal<br>
+  if ($lastBlog->have_posts()):<br>
+    while($lastBlog->have_posts()):<br>
+      $lastBlog->the_post();<br>
+      get_template_part('content','tiagos');<br>
+    endwhile;<br>
+  endif;<br>
+  wp_reset_postdata();  // fazer o reset ao wp_query<br>
+endforeach;</p>
+<h4>O artigo</h4>
+<p>Usa-se o ficheiro single.php que têm de ter toda a estrutura da página tal e qual o index ou algo parecido. <br>
+comments_template(); // serve para aparecer os comentários <br>
+the_tags(); <br>
+edit_post_link();</p>
+<h4>Search form</h4>
+<p>get_search_form(); </p>
+<p>add_theme_support('html5',array('search-form')); <cinza class="cinza">// para ativar o suporte html5</cinza></p>
+<p>Se criarmos o ficheiro searchform.php podemos fazer a nossa caixa de procura, Após a procura o wp apresenta caso exista o ficheiro search.php <br>
+Se dentro deste ficheiro chamar-mos get_template_part('content','procurar'); podemos criar um content-procurar.php para a apresentação da procura.</p>
+<p>the_excerpt(); </p>
+<h4>Paginação do blog</h4>
+<p>next_posts_link('« Older Posts ') </p>
+<p>previous_posts_link('Newer Posts »')</p>
+<p>next_post_link(' ') </p>
+<p>previous_posts_link(' ')</p>
+<p>$atual = (get_query_var('paged')) ? get_query_var('paged') : 1; // numero da pagina <br>
+$args = array('posts_per_page'=>1, 'paged' => $atual); <br>
+query_posts($args); <br> wp_reset_query();</p>
+<h4>Metadata</h4>
+<p>language_attributes();</p>
+<p>bloginfo('charset');</p>
+<p>bloginfo('name'); wp_title('-');</p>
+<p>bloginfo('name');</p>
+<p>wp_head() retorna muita informação, muitas vezes alguma que não pretendemos que esteja disponível, pode-se remover através de: <br>
+function tiagos_remove_version(){ <br>
+  return ' '; <br>
+} <br>
+add_filter('the_generator','tiagos_remove_version'); </p>
 </div>
 </body>
 <footer>
