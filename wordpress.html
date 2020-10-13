@@ -97,6 +97,8 @@ endif; <br>
 </p>
 <h4>Falta a pasta temporária / sem memória suficiente</h4>
 <p>info.php com phpinfo(); <br> Dentro do php.ini para a falta da pasta temporária, dar o caminho para uma pasta com esse efeito: <br>
+open_basedir = none <br>
+<p>isto deverá resolver a questão, caso persista:</p>
 upload_tmp_dir = /tmp <br>
 em wp-config.php adicionar mesmo antes de "E é tudo. Pare de editar!" adicionar: <br>
 define('WP_TEMP_DIR', dirname(_FILE_). '/wp-content/temp/');<br>
