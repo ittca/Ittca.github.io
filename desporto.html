@@ -3,11 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Canais de desporto</title>
+    <script async src="https://api.countapi.xyz/hit/ittca.github.io/31a6e390-21d4-41d6-a8aa-de34cdaeecce?callback=websiteVisits"></script>
     <link rel="icon" href="https://ittca.github.io/imagens/ittca_logo.png">
   </head>
   <body>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7932475&style=0009&nbdigits=6&type=page&initCount=110" title="Free Counter" Alt="web counter" border="0" />
     <h1>Canais de desporto</h1>
+    <h2>Esta página foi visulizada <span id="visits"></span> vezes.</h2>
     <div class="videos">
       <a href="https://sportsonline.to/channels/pt/sporttv1.php">Sportv1
         <iframe src="https://sportsonline.to/channels/pt/sporttv1.php" width="600" height="360"></iframe>
@@ -64,3 +66,6 @@ width: calc(100% - 90px);}
   }
   a{text-decoration:none;margin-top:20px;color:black;}
 </style>
+<script>
+  function websiteVisits(response){document.querySelector("#visits").textContent = response.value;}
+</script>
