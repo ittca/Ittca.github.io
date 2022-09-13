@@ -10,37 +10,43 @@
     <h1>Canais de desporto</h1>
     <div class="videos">
       <a href="https://sportsonline.to/channels/pt/sporttv1.php">Sportv1
-        <iframe src="https://sportsonline.to/channels/pt/sporttv1.php" width="600" height="360"></iframe>
+        <iframe class="ittcaframe" src="https://sportsonline.to/channels/pt/sporttv1.php"></iframe>
       </a>
       <a href="https://sportsonline.to/channels/pt/sporttv2.php">Sportv2
-        <iframe src="https://sportsonline.to/channels/pt/sporttv2.php" width="600" height="360"></iframe>
+        <iframe class="ittcaframe" src="https://sportsonline.to/channels/pt/sporttv2.php"></iframe>
       </a>
       <a href="https://sportsonline.to/channels/pt/sporttv3.php">Sportv3
-        <iframe src="https://sportsonline.to/channels/pt/sporttv3.php" width="600" height="360"></iframe>
+        <iframe class="ittcaframe" src="https://sportsonline.to/channels/pt/sporttv3.php"></iframe>
       </a>
       <a href="https://sportsonline.to/channels/pt/sporttv4.php">Sportv4
-        <iframe src="https://sportsonline.to/channels/pt/sporttv4.php" width="600" height="360"></iframe>
+        <iframe class="ittcaframe" src="https://sportsonline.to/channels/pt/sporttv4.php"></iframe>
       </a>
       <a href="https://sportsonline.to/channels/pt/sporttv5.php">Sportv5
-        <iframe src="https://sportsonline.to/channels/pt/sporttv5.php" width="600" height="360"></iframe>
+        <iframe class="ittcaframe" src="https://sportsonline.to/channels/pt/sporttv5.php"></iframe>
       </a>
       <a href="https://sportsonline.to/channels/bra/br1.php">Sportv1 Brazil
-        <iframe src="https://sportsonline.to/channels/bra/br1.php" width="600" height="360"></iframe>
+        <iframe class="ittcaframe" src="https://sportsonline.to/channels/bra/br1.php"></iframe>
       </a>
       <a href="https://sportsonline.to/channels/bra/br2.php">Premiere Brazil
-        <iframe src="https://sportsonline.to/channels/bra/br2.php" width="600" height="360"></iframe>
+        <iframe class="ittcaframe" src="https://sportsonline.to/channels/bra/br2.php"></iframe>
       </a>
       <a href="https://sportsonline.to/channels/bra/br4.php">Espn Brazil
-        <iframe src="https://sportsonline.to/channels/bra/br4.php" width="600" height="360"></iframe>
+        <iframe class="ittcaframe" src="https://sportsonline.to/channels/bra/br4.php"></iframe>
       </a>
-      <a href="https://cdn2.crichd.pro/embed2.php?id=laliga&q=LaLigaTV">La liga 
-        <iframe src="https://cdn2.crichd.pro/embed2.php?id=laliga&q=LaLigaTV" width="600" height="360"></iframe>
+      <a href="https://cdn2.crichd.pro/embed2.php?id=laliga&q=LaLigaTV">La liga
+        <iframe class="ittcaframe" src="https://cdn2.crichd.pro/embed2.php?id=laliga&q=LaLigaTV"></iframe>
+      </a>
+      <a href="https://allfoot.info/y/1/19.php">eleven 1 França
+        <iframe class="ittcaframe" src="https://allfoot.info/y/1/19.php"></iframe>
+      </a>
+      <a href="https://sportsonline.to/channels/hd/hd4.php">beIN sports 1 França
+        <iframe class="ittcaframe" src="https://sportsonline.to/channels/hd/hd4.php"></iframe>
+      </a>
+      <a href="https://poscitech.club/tv/ch63.php">beIN sports 2 França
+        <iframe class="ittcaframe" src="https://poscitech.club/tv/ch63.php"></iframe>
       </a>
     </div>
     <div class="links">
-      <a href="https://allfoot.info/y/1/19.php">eleven 1 França</a>
-      <a href="https://sportsonline.to/channels/hd/hd4.php">beIN sports 1 França</a>
-      <a href="https://poscitech.club/tv/ch63.php">beIN sports 2 França</a>
       <a href="https://poscitech.club/tv/ch64.php">beIN sports 3 França</a>
       <a href="https://daddylive.live/embed/stream-67.php">beIN sports 4 França</a>
       <a href="https://sportsonline.to/channels/hd/hd1.php">beIN sports 5 França</a>
@@ -50,18 +56,37 @@
   </body>
 </html>
 <style media="screen">
-  body{background:lightblue;margin-inline: auto;
-width: calc(100% - 90px);}
+  body{
+    background:lightblue;
+    margin-inline: auto;
+    width: calc(100% - 90px);
+  }
   .videos{
-    display:flex;
-    flex-wrap: wrap;
+    display:grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   }
   .videos a{
     display:grid;
   }
+  .ittcaframe{
+    margin-top:10px;
+    border-radius:5px;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.8);
+    border:none;
+    width: 100%;
+    height:250px;
+  }
   .links{margin-top:30px;}
   .links a{
     margin:20px;
+  }
+  @media only screen and (max-width: 910px){
+    .ittcaframe{height:370px;}
+    .videos{
+      display:block;
+
+    }
   }
   a{text-decoration:none;margin-top:20px;color:black;}
 </style>
