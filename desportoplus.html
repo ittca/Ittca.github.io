@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>em direto</title>
+    <link rel="icon" href="https://ittca.github.io/imagens/ittca_logo.png">
+  </head>
+  <body>
+    <div>
+      <iframe id="ittcaframe" src="https://sportsonline.to/channels/pt/sporttv1.php"></iframe>
+      <iframe id="smallframe" class="ittcamediumframe" src="https://sportsonline.to/channels/pt/sporttv2.php"></iframe>
+      <div id="size">
+        <a onclick="javascript:sml()">o</a>
+        <a onclick="javascript:med()">o</a>
+        <a onclick="javascript:big()">o</a>
+      </div>
+    </div>
+  </body>
+</html>
+<script type="text/javascript">
+  function sml(){
+    var elem = document.getElementById("smallframe");
+    if(elem.classList.contains("ittcasmallframe")){elem.classList.remove("ittcasmallframe");}
+    if(elem.classList.contains("ittcamediumframe")){elem.classList.remove("ittcamediumframe");}
+    if(elem.classList.contains("ittcabigframe")){elem.classList.remove("ittcabigframe");}
+    elem.classList.add("ittcasmallframe");
+  }
+  function med(){
+    var elem = document.getElementById("smallframe");
+    if(elem.classList.contains("ittcasmallframe")){elem.classList.remove("ittcasmallframe");}
+    if(elem.classList.contains("ittcamediumframe")){elem.classList.remove("ittcamediumframe");}
+    if(elem.classList.contains("ittcabigframe")){elem.classList.remove("ittcabigframe");}
+    elem.classList.add("ittcamediumframe");
+  }
+  function big(){
+    var elem = document.getElementById("smallframe");
+    if(elem.classList.contains("ittcasmallframe")){elem.classList.remove("ittcasmallframe");}
+    if(elem.classList.contains("ittcamediumframe")){elem.classList.remove("ittcamediumframe");}
+    if(elem.classList.contains("ittcabigframe")){elem.classList.remove("ittcabigframe");}
+    elem.classList.add("ittcabigframe");
+  }
+</script>
+<style media="screen">
+  #ittcaframe{
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    width:100%;
+    height:100%;
+    border:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    z-index:99;
+  }
+  .ittcasmallframe{
+    position:fixed;
+    top:5px;
+    right:5px;
+    width:330px;
+    height:187px;
+    border:none;
+    border-radius:10px;
+    overflow:hidden;
+    z-index:100;
+  }
+  .ittcamediumframe{
+    position:fixed;
+    top:5px;
+    right:5px;
+    width:530px;
+    height:300px;
+    border:none;
+    border-radius:10px;
+    overflow:hidden;
+    z-index:100;
+  }
+  .ittcabigframe{
+    position:fixed;
+    top:5px;
+    right:5px;
+    width:730px;
+    height:413px;
+    border:none;
+    border-radius:10px;
+    overflow:hidden;
+    z-index:100;
+  }
+  #size{
+    position:fixed;
+    top:5px;
+    right:15px;
+    width:530px;
+    height:300px;
+    border:none;
+    border-radius:10px;
+    z-index:101;
+    text-align:right;
+  }
+  #size a{
+    color:white;
+    text-decoration:none;
+  }
+  #size a:hover{
+    cursor:pointer;
+  }
+</style>
