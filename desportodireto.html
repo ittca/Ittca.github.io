@@ -7,17 +7,27 @@
   </head>
   <body>
     <div>
-      <iframe id="ittcaframe" src="https://sportsonline.to/channels/pt/sporttv1.php"></iframe>
-      <iframe id="smallframe" class="ittcamediumframe" src="https://sportsonline.to/channels/pt/sporttv2.php"></iframe>
+      <iframe id="ittcaframe"></iframe>
+      <iframe id="smallframe" class="ittcasmallframe"></iframe>
       <div id="size">
         <a onclick="javascript:sml()">o</a>
         <a onclick="javascript:med()">o</a>
         <a onclick="javascript:big()">o</a>
+        <a onclick="javascript:sch()">«»</a>
       </div>
     </div>
   </body>
 </html>
 <script type="text/javascript">
+  document.getElementById("ittcaframe").src = sessionStorage.getItem("link1");
+  document.getElementById("smallframe").src = sessionStorage.getItem("link2");
+  function sch(){
+    var l1 = sessionStorage.getItem("link1");
+    var l2 = sessionStorage.getItem("link2");
+    sessionStorage.setItem("link1", l2);
+    sessionStorage.setItem("link2", l1);
+    window.location.reload();
+  }
   function sml(){
     var elem = document.getElementById("smallframe");
     if(elem.classList.contains("ittcasmallframe")){elem.classList.remove("ittcasmallframe");}
@@ -38,6 +48,9 @@
     if(elem.classList.contains("ittcamediumframe")){elem.classList.remove("ittcamediumframe");}
     if(elem.classList.contains("ittcabigframe")){elem.classList.remove("ittcabigframe");}
     elem.classList.add("ittcabigframe");
+  }
+  function swithc(){
+
   }
 </script>
 <style media="screen">
