@@ -40,6 +40,52 @@
       <a href="https://sportsonline.to/channels/hd/hd4.php">beIN sports 1 França</a>
       <a href="https://sportsonline.to/channels/hd/hd1.php">beIN sports 5 França</a>
     </div>
+    <div id="abrirnovajanela">
+      <h2>Assitir dois canais simultaneamente</h2>
+      <div class="flex">
+        <label>Link1&nbsp;&nbsp;</label>
+        <select id="fscreen" onchange="fifins()">
+          <option value="1">sportv1</option>
+          <option value="2">sportv2</option>
+          <option value="3">sportv3</option>
+          <option value="4">sportv4</option>
+          <option value="5">sportv5</option>
+          <option value="6">eleven1</option>
+          <option value="7">eleven2</option>
+          <option value="8">eleven3</option>
+          <option value="9">sportv1 brazil</option>
+          <option value="10">premiere brazil</option>
+          <option value="11">espn brazil</option>
+          <option value="12">la liga</option>
+          <option value="13">bein sports1 frança</option>
+          <option value="14">bein sports5 frança</option>
+          <option value="15">inserir</option>
+        </select>
+        <input type="text" id="fscreeninput">
+      </div>
+      <div class="flex">
+        <label>Link2&nbsp;&nbsp;</label>
+        <select id="sscreen" onchange="sifins()">
+          <option value="1">sportv1</option>
+          <option value="2" selected>sportv2</option>
+          <option value="3">sportv3</option>
+          <option value="4">sportv4</option>
+          <option value="5">sportv5</option>
+          <option value="6">eleven1</option>
+          <option value="7">eleven2</option>
+          <option value="8">eleven3</option>
+          <option value="9">sportv1 brazil</option>
+          <option value="10">premiere brazil</option>
+          <option value="11">espn brazil</option>
+          <option value="12">la liga</option>
+          <option value="13">bein sports1 frança</option>
+          <option value="14">bein sports5 frança</option>
+          <option value="15">inserir</option>
+        </select>
+        <input type="text" id="sscreeninput">
+      </div>
+      <a onclick="javascript:abrir()">Abrir</a>
+    </div>
     <h6>Clicar nos titulos para abrir o link de cada canal. Para ativar o som clicar no "click here to unmute" umas 3 vezes. Use um bloqueador de publicidade e por vezes um VPN</h6>
     <h6>Esta página foi visualizada <span id="visits"></span> vezes.</h6>
     <h6>Aviso: esta página apenas mostra e usa links disponíveis em outros sites pela internet, não têm qualquer ligação com os mesmos incluindo publicidades ou outros que os respetivos links possam usar.</h6>
@@ -47,6 +93,30 @@
   </body>
 </html>
 <style media="screen">
+  .flex{display:flex;}
+  #fscreeninput, #sscreeninput{display:none;}
+  #abrirnovajanela{
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.8);
+    background: lightgray;
+    width: fit-content;
+    padding-inline: 20px;
+    border-radius: 10px;
+    padding-bottom: 44px;
+  }
+  #abrirnovajanela a{
+    background: green;
+    border-radius: 8px;
+    padding-inline: 10px;
+    padding-block: 3px;
+    color: white;
+    float: right;
+    margin-top: 4px;
+  }
+  #abrirnovajanela a:hover{
+    cursor:pointer;
+    background:lightgreen;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.8);
+  }
   #urllinks{
     aspect-ratio: 16 / 9;
     height: 100%;
@@ -87,4 +157,57 @@
 </style>
 <script>
   function websiteVisits(response){document.querySelector("#visits").textContent = response.value;}
+  function fifins(){
+    var l3 = document.getElementById("fscreen").value;
+    if(l3==15){
+      document.getElementById("fscreeninput").style.display = "block";
+    } else {
+      document.getElementById("fscreeninput").style.display = "none";
+    }
+  }
+  function sifins(){
+    var l4 = document.getElementById("sscreen").value;
+    if(l4==15){
+      document.getElementById("sscreeninput").style.display = "block";
+    } else {
+      document.getElementById("sscreeninput").style.display = "none";
+    }
+  }
+  function abrir(){
+    var l3 = document.getElementById("fscreen").value;
+    var l4 = document.getElementById("sscreen").value;
+    if(l3 == 1){ var l1 = "https://sportsonline.to/channels/pt/sporttv1.php";}
+    if(l3 == 2){ var l1 = "https://sportsonline.to/channels/pt/sporttv2.php";}
+    if(l3 == 3){ var l1 = "https://sportsonline.to/channels/pt/sporttv3.php";}
+    if(l3 == 4){ var l1 = "https://sportsonline.to/channels/pt/sporttv4.php";}
+    if(l3 == 5){ var l1 = "https://sportsonline.to/channels/pt/sporttv5.php";}
+    if(l3 == 6){ var l1 = "https://v3.sportsonline.to/channels/pt/eleven1.php";}
+    if(l3 == 7){ var l1 = "https://v3.sportsonline.to/channels/pt/eleven2.php";}
+    if(l3 == 8){ var l1 = "https://v3.sportsonline.to/channels/pt/eleven3.php";}
+    if(l3 == 9){ var l1 = "https://sportsonline.to/channels/bra/br1.php";}
+    if(l3 == 10){ var l1 = "https://sportsonline.to/channels/bra/br2.php";}
+    if(l3 == 11){ var l1 = "https://sportsonline.to/channels/bra/br4.php";}
+    if(l3 == 12){ var l1 = "https://cdn2.crichd.pro/embed2.php?id=laliga&q=LaLigaTV";}
+    if(l3 == 13){ var l1 = "https://sportsonline.to/channels/hd/hd4.php";}
+    if(l3 == 14){ var l1 = "https://sportsonline.to/channels/hd/hd1.php";}
+    if(l3 == 15){ var l1 = document.getElementById("fscreeninput").value;}
+    if(l4 == 1){ var l2 = "https://sportsonline.to/channels/pt/sporttv1.php";}
+    if(l4 == 2){ var l2 = "https://sportsonline.to/channels/pt/sporttv2.php";}
+    if(l4 == 3){ var l2 = "https://sportsonline.to/channels/pt/sporttv3.php";}
+    if(l4 == 4){ var l2 = "https://sportsonline.to/channels/pt/sporttv4.php";}
+    if(l4 == 5){ var l2 = "https://sportsonline.to/channels/pt/sporttv5.php";}
+    if(l4 == 6){ var l2 = "https://v3.sportsonline.to/channels/pt/eleven1.php";}
+    if(l4 == 7){ var l2 = "https://v3.sportsonline.to/channels/pt/eleven2.php";}
+    if(l4 == 8){ var l2 = "https://v3.sportsonline.to/channels/pt/eleven3.php";}
+    if(l4 == 9){ var l2 = "https://sportsonline.to/channels/bra/br1.php";}
+    if(l4 == 10){ var l2 = "https://sportsonline.to/channels/bra/br2.php";}
+    if(l4 == 11){ var l2 = "https://sportsonline.to/channels/bra/br4.php";}
+    if(l4 == 12){ var l2 = "https://cdn2.crichd.pro/embed2.php?id=laliga&q=LaLigaTV";}
+    if(l4 == 13){ var l2 = "https://sportsonline.to/channels/hd/hd4.php";}
+    if(l4 == 14){ var l2 = "https://sportsonline.to/channels/hd/hd1.php";}
+    if(l4 == 15){ var l2 = document.getElementById("sscreeninput").value;}
+    sessionStorage.setItem("link1", l1);
+    sessionStorage.setItem("link2", l2);
+    window.open("https://ittca.github.io/desportodireto.html");
+  }
 </script>
